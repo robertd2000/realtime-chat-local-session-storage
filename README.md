@@ -7,7 +7,7 @@
 $ git clone https://github.com/robertd2000/realtime-chat-local-session-storage.git
 ```
 
-- перейдите в директорию с проектом или установите необходимые зависимости командой 
+- перейдите в директорию с проектом и установите необходимые зависимости командой 
 ```sh
 $ npm install
 ```
@@ -17,4 +17,4 @@ $ npm install
 $ npm run dev
 ```
 
-[Протестировать на GitHub Pages](https://robertd2000.github.io/realtime-chat-local-session-storage/)
+Также можно [протестировать на GitHub Pages](https://robertd2000.github.io/realtime-chat-local-session-storage/)
