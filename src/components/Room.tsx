@@ -10,14 +10,14 @@ interface IProps {
 
 const Room: FC<IProps> = ({ messages, user, bottomRef }) => {
   return (
-    <div>
+    <div className="container message-container">
       {messages.length ? (
-        <div className="container message-container">
+        <>
           {messages.map((message) => (
             <Message key={message.id} message={message} user={user} />
           ))}
           <div ref={bottomRef} />
-        </div>
+        </>
       ) : (
         <h4>Нет сообщений</h4>
       )}
