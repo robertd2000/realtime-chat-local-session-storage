@@ -19,7 +19,7 @@ const Room: FC<IProps> = ({ messages, user, bottomRef }) => {
           <div ref={bottomRef} />
         </div>
       ) : (
-        <h3>Нет сообщений</h3>
+        <h4>Нет сообщений</h4>
       )}
     </div>
   )

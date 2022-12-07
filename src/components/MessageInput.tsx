@@ -13,6 +13,11 @@ const Input: FC<IProps> = ({ user, sendMessage }) => {
     return setText(e.target.value)
   }
 
+  const sendMessageHandler = () => {
+    sendMessage(text, user)
+    setText('')
+  }
+
   return (
     <div className="input-container">
       <input
@@ -26,7 +31,7 @@ const Input: FC<IProps> = ({ user, sendMessage }) => {
       <button
         id="send-message"
         type="button"
-        onClick={() => sendMessage(text, user)}
+        onClick={sendMessageHandler}
         disabled={text.length <= 0}
       >
         Отправить

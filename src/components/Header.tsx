@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 
 const Header = ({ username }: { username: string }) => {
   return (
@@ -8,4 +8,4 @@ const Header = ({ username }: { username: string }) => {
   )
 }
 
-export default Header
+export default memo(Header)

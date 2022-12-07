@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, memo } from 'react'
 import { IMessage, IUser } from '../types'
 import { formatDate } from '../utils/helpers'
 
@@ -8,21 +8,20 @@ interface IProps {
 }
 
 const Message: FC<IProps> = ({ message, user }) => {
+  const messageStatus = message.user.id === user.id ? 'received' : 'sent'
+  const messageBubbleStatus =
+    message.user.id === user.id ? 'sent-bubble' : 'received-bubble'
+  const messageAuthor =
+    message.user.id === user.id ? 'Вы' : message.user.username
+
   return (
-    <div className={message.user.id === user.id ? 'received' : 'sent'}>
+    <div className={messageStatus}>
       <h5 className="head">
-        {message.user.id === user.id ? 'Вы' : message.user.username} |{' '}
-        <span>{formatDate(message.date)}</span>
+        {messageAuthor} | <span>{formatDate(message.date)}</span>
       </h5>
-      <p
-        className={`${
-          message.user.id === user.id ? 'sent-bubble' : 'received-bubble'
-        }`}
-      >
-        {message.text}
-      </p>
+      <p className={messageBubbleStatus}>{message.text}</p>
     </div>
   )
 }
 
-export default Message
+export default memo(Message)

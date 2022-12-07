@@ -8,20 +8,23 @@ export const useUser = () => {
   const [user, setUser] = useState<IUser>(getUsernameFromSessionStorage)
   const [showModal, setShowModal] = useState<boolean>(!user.username)
 
+  const id = generateId()
+
   const joinToChat = () => {
     window.sessionStorage.setItem(
       STORAGE_USERS,
       JSON.stringify({
         username: user.username!,
-        id: generateId(),
+        id,
       })
     )
     setShowModal(false)
+    console.log(user)
   }
 
   const setUsername = (value: string) => {
     setUser({
-      ...user,
+      id,
       username: value,
     })
   }
