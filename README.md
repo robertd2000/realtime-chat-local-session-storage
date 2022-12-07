@@ -6,4 +6,4 @@
 - перейдите в директорию с проектом или установите необходимые зависимости командой npm install
 - запустите приложение командой npm run dev
 
-(https://robertd2000.github.io/realtime-chat-local-session-storage/)[Протестировать на GitHub Pages]
+[Протестировать на GitHub Pages](https://robertd2000.github.io/realtime-chat-local-session-storage/)
