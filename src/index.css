@@ -41,6 +41,7 @@ body {
   justify-content: center;
   max-width: 500px;
   min-width: 250px;
+  min-height: 400px;
 }
 
 .head-container {
@@ -70,6 +71,7 @@ body {
 .message-container {
   width: 100%;
   max-height: 600px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
