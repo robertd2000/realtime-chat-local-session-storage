@@ -18,12 +18,19 @@ const Input: FC<IProps> = ({ user, sendMessage }) => {
     setText('')
   }
 
+  const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      sendMessageHandler()
+    }
+  }
+
   return (
     <div className="input-container">
       <input
         type="text"
         value={text}
         onChange={onText}
+        onKeyPress={handleEnter}
         placeholder="Message"
         aria-label="Message"
         aria-describedby="send-message"
