@@ -18,3 +18,5 @@ $ npm run dev
 ```
 
 Также можно [протестировать на GitHub Pages](https://robertd2000.github.io/realtime-chat-local-session-storage/)
+
+![preview](https://github.com/robertd2000/realtime-chat-local-session-storage/blob/main/src/assets/1.png?raw=true)
