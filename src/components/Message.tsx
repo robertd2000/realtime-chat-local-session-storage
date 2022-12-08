@@ -1,18 +1,19 @@
-import React, { FC, memo } from 'react'
-import { IMessage, IUser } from '../types'
-import { formatDate } from '../utils/helpers'
+import React, { FC, memo } from "react";
+import { IMessage, IUser } from "../types";
+import { formatDate } from "../utils/helpers";
 
 interface IProps {
-  message: IMessage
-  user: IUser
+  message: IMessage;
+  user: IUser;
 }
 
 const Message: FC<IProps> = ({ message, user }) => {
-  const messageStatus = message.user.id === user.id ? 'received' : 'sent'
+
+  const messageStatus = message.user.id === user.id ? "received" : "sent";
   const messageBubbleStatus =
-    message.user.id === user.id ? 'sent-bubble' : 'received-bubble'
+    message.user.id === user.id ? "sent-bubble" : "received-bubble";
   const messageAuthor =
-    message.user.id === user.id ? 'Вы' : message.user.username
+    message.user.id === user.id ? "Вы" : message.user.username;
 
   return (
     <div className={messageStatus}>
@@ -21,7 +22,7 @@ const Message: FC<IProps> = ({ message, user }) => {
       </h5>
       <p className={messageBubbleStatus}>{message.text}</p>
     </div>
-  )
-}
+  );
+};
 
-export default memo(Message)
+export default memo(Message);
