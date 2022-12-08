@@ -1,6 +1,7 @@
 import { FC, memo } from 'react'
-import { IMessage, IUser } from '../types'
-import Message from './Message'
+import { IMessage, IUser } from '../../types'
+import Message from '../Message/Message'
+import styles from './Room.module.css'
 
 interface IProps {
   messages: IMessage[]
@@ -10,7 +11,7 @@ interface IProps {
 
 const Room: FC<IProps> = ({ messages, user, bottomRef }) => {
   return (
-    <div className="container message-container">
+    <div className={styles.message_container}>
       {messages.length ? (
         <>
           {messages.map((message) => (

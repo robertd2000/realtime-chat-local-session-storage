@@ -1,0 +1,81 @@
+.sent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.received {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.head {
+  color: var(--dark-gray);
+  font-size: 20px;
+}
+
+.head span {
+  font-size: 14px;
+}
+
+p {
+  position: relative;
+}
+
+.received,
+.sent {
+  max-width: 100%;
+}
+
+.sent p:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -6px;
+  width: 0px;
+  height: 0px;
+  border-top: 0px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 10px solid var(--send-color);
+}
+
+.received p:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -6px;
+  width: 0px;
+  height: 0px;
+  border-top: 0px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 10px solid var(--received-color);
+}
+
+.sent_bubble {
+  background-color: var(--send-color);
+}
+
+.received_bubble {
+  background-color: var(--received-color);
+}
+
+.sent_bubble,
+.received_bubble {
+  max-width: 70%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  text-align: left;
+}
+
+.sent_bubble {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.received_bubble {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-left-radius: 3px;
+}

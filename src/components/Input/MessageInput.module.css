@@ -1,0 +1,30 @@
+.input_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+.input_container input {
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+}
+
+.input_container input:focus {
+  border-bottom: 1px solid var(--header-color);
+}
+
+.input_container button {
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--header-color);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: 20px;
+}

@@ -1,5 +1,7 @@
-import { FC, memo, useState } from 'react'
-import { IUser } from '../types'
+import { FC, memo } from 'react'
+import { useInput } from '../../hooks/useInput'
+import { IUser } from '../../types'
+import styles from './MessageInput.module.css'
 
 interface IProps {
   user: IUser
@@ -7,30 +9,19 @@ interface IProps {
 }
 
 const Input: FC<IProps> = ({ user, sendMessage }) => {
-  const [text, setText] = useState('')
-
-  const onText = (e: React.ChangeEvent<HTMLInputElement>) => {
-    return setText(e.target.value)
-  }
-
-  const sendMessageHandler = () => {
-    sendMessage(text, user)
-    setText('')
-  }
-
-  const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      sendMessageHandler()
-    }
-  }
+  const { text, inputRef, onText, handleEnter, sendMessageHandler } = useInput(
+    user,
+    sendMessage
+  )
 
   return (
-    <div className="input-container">
+    <div className={styles.input_container}>
       <input
         type="text"
         value={text}
         onChange={onText}
-        onKeyPress={handleEnter}
+        onKeyDown={handleEnter}
+        ref={inputRef}
         placeholder="Message"
         aria-label="Message"
         aria-describedby="send-message"
