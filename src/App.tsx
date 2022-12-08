@@ -7,13 +7,13 @@ import './App.css'
 
 export default function App() {
   const { messages, sendMessage, bottomRef } = useMessages()
-  const { user, showModal, setUsername, joinToChat } = useUser()
+  const { user, username, showModal, setUsername, joinToChat } = useUser()
 
   return (
     <div className="container">
       {showModal && (
         <Modal
-          username={user.username!}
+          username={username!}
           setUsername={setUsername}
           joinToChat={joinToChat}
         />
