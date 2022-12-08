@@ -1,22 +1,22 @@
-import Room from './components/Room'
-import MessageInput from './components/MessageInput'
-import Modal from './components/Modal'
+import Room from "./components/Room";
+import MessageInput from "./components/MessageInput";
+import Modal from "./components/Modal";
 
-import { useMessages } from './hooks/useMessages'
-import { useUser } from './hooks/useUser'
+import { useMessages } from "./hooks/useMessages";
+import { useUser } from "./hooks/useUser";
 
-import './App.css'
-import Header from './components/Header'
+import "./styles.css";
+import Header from "./components/Header";
 
 export default function App() {
-  const { messages, sendMessage, bottomRef } = useMessages()
-  const { user, showModal, setUsername, joinToChat } = useUser()
+  const { messages, sendMessage, bottomRef } = useMessages();
+  const { user, username, showModal, setUsername, joinToChat } = useUser();
 
   return (
     <div className="main-container">
       {showModal && (
         <Modal
-          username={user.username!}
+          username={username!}
           setUsername={setUsername}
           joinToChat={joinToChat}
         />
@@ -29,5 +29,5 @@ export default function App() {
         </div>
       )}
     </div>
-  )
+  );
 }
